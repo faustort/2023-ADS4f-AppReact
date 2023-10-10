@@ -3,12 +3,11 @@ import HomeScreen from './../screens/HomeScreen';
 import Body from './../components/Body';
 import SobreScreen from "../screens/SobreScreen";
 import ContatoScreen from "../screens/ContatoScreen";
-
 /**
  * Retorna o componente de navegação
  * primária do meu aplicativo / site
  */
-export default function RoutesRoot() {
+export default function RootNavigation() {
     return (
         <BrowserRouter>
             {/* BrowserRouter é o elemento que define a navegação base */}
