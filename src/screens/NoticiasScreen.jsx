@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { Container } from "react-bootstrap";
-
-
 export default function NoticiasScreen() {
-
+    
+    useEffect();
+    
     function pegarNoticias() {
         fetch('https://dummyjson.com/posts/')
             .then(resposta => resposta.json())
@@ -10,7 +11,6 @@ export default function NoticiasScreen() {
                 console.log(respostaEmJson);
             })
     }
-
 
     return (
         <Container>
