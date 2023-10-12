@@ -5,6 +5,7 @@ import SobreScreen from "../screens/SobreScreen";
 import ContatoScreen from "../screens/ContatoScreen";
 import NoticiasScreen from "../screens/NoticiasScreen";
 import { Container } from "react-bootstrap";
+import NoticiasSingleScreen from "../screens/NoticiasSingleScreen";
 /**
  * Retorna o componente de navegação
  * primária do meu aplicativo / site
@@ -17,11 +18,24 @@ export default function RootNavigation() {
                 {/* Routes é a definição de rotas necessário */}
                 <Route path="/" element={<Body />}>
                     {/* Aqui definimos as rotas */}
-                    <Route element={<HomeScreen />} path="/" />
-                    <Route element={<SobreScreen />} path="/sobre" />
-                    <Route element={<NoticiasScreen />} path="/noticias" />
-                    <Route element={<ContatoScreen />} path="/contato" />
-                    <Route path="*" element={<Pagina404 />} />
+                    <Route
+                        path="/"
+                        element={<HomeScreen />} />
+                    <Route
+                        path="/sobre"
+                        element={<SobreScreen />} />
+                    <Route
+                        path="/noticias"
+                        element={<NoticiasScreen />} />
+                    <Route
+                        path="/noticias/:idNoticia"
+                        element={<NoticiasSingleScreen />} />
+                    <Route
+                        path="/contato"
+                        element={<ContatoScreen />} />
+                    <Route
+                        path="*"
+                        element={<Pagina404 />} />
                 </Route>
             </Routes>
         </BrowserRouter>
