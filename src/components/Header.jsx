@@ -19,7 +19,6 @@ export default function HeaderBootstrap() {
                         <Link to="/" className="nav-link">Inicial</Link>
                         <Link to="sobre" className="nav-link">Sobre</Link>
                         <Link to="noticias" className="nav-link">Notícias</Link>
-                        <Link to="contato" className="nav-link">Contato</Link>
                         {/* Fazem os mesmo */}
                         <Link to="contato" className="nav-link">Contato</Link>
                         <Nav.Link as={Link} to="/contato">Contato</Nav.Link>
