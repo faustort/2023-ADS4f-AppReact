@@ -30,8 +30,13 @@ export default function NoticiasScreen() {
                         noticias.map(
                             function (noticias, indice) {
                                 return (
-                                    <Col lg={3} xs={12} md={6} key={indice}>
-                                        <Card>
+                                    <Col lg={3} xs={12} md={6} key={indice}
+                                        style={
+                                            {
+                                                marginBottom: 20,
+                                            }
+                                        }>
+                                        <Card className="h-100">
                                             <Card.Body>
                                                 <Card.Title>{noticias.title}</Card.Title>
                                                 <Card.Text>

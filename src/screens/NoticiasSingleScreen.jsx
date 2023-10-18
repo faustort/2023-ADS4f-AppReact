@@ -16,10 +16,10 @@ export default function NoticiasSingleScreen() {
         <Container>
             {noticia?.title &&
                 (
-                    <div>
-                        <h1>{noticia.title} </h1>
+                    <Container>
+                        <h1>{noticia.title}</h1>
                         <p>{noticia.body}</p>
-                    </div>
+                    </Container>
                 )
             }
         </Container>
