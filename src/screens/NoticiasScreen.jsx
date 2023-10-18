@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 export default function NoticiasScreen() {
 
+    // Criamos uma variável em React 
     const [noticias, setNoticias] = useState([]);
 
     // Ele é responsável por verificar se o componente 
@@ -23,19 +24,29 @@ export default function NoticiasScreen() {
     return (
         <Container>
             <h1>Notícias</h1>
-            {
-                noticias.map(
-                    function (noticias, indice) {
-                        return (
-                            <Container key={indice}>
-                                <h1>{noticias.title}</h1>
-                                <p>{noticias.body.substring(0, 50)}...</p>
-                                <Link to={'/noticias/' + noticias.id}>Leia mais</Link>
-                            </Container>
+            <Container>
+                <Row>
+                    {
+                        noticias.map(
+                            function (noticias, indice) {
+                                return (
+                                    <Col lg={3} xs={12} md={6} key={indice}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>{noticias.title}</Card.Title>
+                                                <Card.Text>
+                                                    {noticias.body.substring(0, 50)} ...
+                                                </Card.Text>
+                                                <Link to={'/noticias/' + noticias.id}>Leia mais</Link>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                )
+                            }
                         )
                     }
-                )
-            }
+                </Row>
+            </Container>
         </Container>
     )
 }
