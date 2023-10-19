@@ -11,7 +11,7 @@ export default function NoticiasSingleScreen() {
                 setNoticia(respostaEmJson);
             })
 
-    }, [])
+    }, [idNoticia])
     return (
         <Container>
             {noticia?.title &&
