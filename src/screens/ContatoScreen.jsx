@@ -19,7 +19,7 @@ export default function ContatoScreen() {
             })
         });
         console.log(event);
-    });
+    }
 }
 
 return (
