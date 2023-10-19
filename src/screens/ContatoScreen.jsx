@@ -14,12 +14,12 @@ export default function ContatoScreen() {
         fetch("", {
             method: "POST",
             body: JSON.stringify({
-                nome: 
-                email: ,
+                nome: aaa,
+                email: bbb,
             })
-        })
+        });
+        console.log(event);
     });
-    console.log(event);
 }
 
 return (
