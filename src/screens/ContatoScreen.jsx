@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Button, Col, Container, Form, FormGroup, Row } from "react-bootstrap";
+import {
+  Alert,
+  Button,
+  Col,
+  Container,
+  Form,
+  FormGroup,
+  Row,
+} from "react-bootstrap";
 
 export default function ContatoScreen() {
   const [nome, setNome] = useState();
@@ -14,18 +22,31 @@ export default function ContatoScreen() {
       e enviar para o backend usando o fetch
       */
   function handleSubmit(event) {
-    event.preventDefault(); // ???
-
-    fetch("http://localhost/rest/", {
+    event.preventDefault(); 
+    
+    if(!validaFormulario()) return;
+    
+    fetch("http://localhost/rest/index.php", {
       method: "POST",
-      body: JSON.stringify({
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: new URLSearchParams({
         nome: nome,
         email: email,
         telefone: telefone,
         mensagem: mensagem,
-      }),
+      }).toString(),
     });
+
     console.log(event);
+  }
+
+  function validaFormulario() {
+    if (!nome) {
+      setError("Digite o nome");
+      return false;
+    }
   }
 
   return (
@@ -70,6 +91,7 @@ export default function ContatoScreen() {
                   onChange={(event) => setMensagem(event.target.value)}
                 />
               </FormGroup>
+              {error && <Alert variant="danger">{error}</Alert>}
               <FormGroup as={Col} lg={12}>
                 <Button variant="primary" type="submit" onClick={handleSubmit}>
                   Enviar contato
