@@ -6,6 +6,7 @@ import ContatoScreen from "../screens/ContatoScreen";
 import NoticiasScreen from "../screens/NoticiasScreen";
 import { Container } from "react-bootstrap";
 import NoticiasSingleScreen from "../screens/NoticiasSingleScreen";
+import LojaScreen from "../screens/LojaScreen";
 /**
  * Retorna o componente de navegação
  * primária do meu aplicativo / site
@@ -33,6 +34,9 @@ export default function RootNavigation() {
                     <Route
                         path="/contato"
                         element={<ContatoScreen />} />
+                    <Route
+                        path="/loja"
+                        element={<LojaScreen />} />
                     <Route
                         path="*"
                         element={<Pagina404 />} />
